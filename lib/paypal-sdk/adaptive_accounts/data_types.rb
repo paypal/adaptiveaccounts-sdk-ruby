@@ -271,7 +271,7 @@ module PayPal::SDK
           # Account Holder's functional area. For business accounts only. Values: Finance, Operations, Technology, Sales, Marketing, Other 
           object_of :functionalArea, String
           # Boolean value, indicates whether user has agreed for a particular agreement or not. 
-          object_of :legalAgreement, LegalAgreementType
+          array_of :legalAgreement, LegalAgreementType
           # Expected Value: 0|1|2|3|4|5 according to the description below: 0 - "Send payments for goods and/or services to domestic merchants" 1 - "Send payments for goods and/or services to cross-border merchants" 2 - "Send payments for goods and/or services to domestic and cross-border merchants" 3 - "Receive payments for goods and/or services from domestic buyers" 4 - "Receive payments for goods and/or services from cross-border buyers" 5 - "Receive payments for goods and/or service from domestic/cross-border buyers" 
           object_of :purposeOfAccount, String
         end
@@ -766,7 +766,7 @@ module PayPal::SDK
           # Third party type: Individual or Business. 
           object_of :thirdPartyType, String
           # If third party is individual, name of the individual. 
-          object_of :name, String
+          object_of :name, NameType
           # If third party is individual, date of birth of the individual. 
           object_of :dateOfBirth, Date
           # Address of third party collecting the data. 
@@ -784,7 +784,9 @@ module PayPal::SDK
           # If third party is a business, collect Incorporation ID. 
           object_of :incorporationId, String
           # If third party is business, collect place of issue of Incorporation. 
-          object_of :incorporationPlaceOfIssue, String
+          object_of :incorporationCountry, String
+          # If third party is business, collect place of issue of Incorporation. 
+          object_of :incorporationState, String
         end
       end
 
