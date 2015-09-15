@@ -146,63 +146,6 @@ module PayPal::SDK
       end
       alias_method :build_check_compliance_status, :BuildCheckComplianceStatus
 
-      # Service Call: AddPartnerFinancialProduct
-      # @param AddPartnerFinancialProductRequest
-      # @return AddPartnerFinancialProductResponse
-      def AddPartnerFinancialProduct(options = {} , http_header = {})
-        request_object  = BuildAddPartnerFinancialProduct(options)
-        request_hash    = request_object.to_hash
-        response_hash   = request("AddPartnerFinancialProduct", request_hash, http_header)
-        AddPartnerFinancialProductResponse.new(response_hash)
-      end
-      alias_method :add_partner_financial_product, :AddPartnerFinancialProduct
-
-      def BuildAddPartnerFinancialProduct(options = {}, &block)
-        klass     = AddPartnerFinancialProductRequest
-        object = options.is_a?(klass) ? options : klass.new(options || {})
-        object.instance_eval(&block) if block
-        object
-      end
-      alias_method :build_add_partner_financial_product, :BuildAddPartnerFinancialProduct
-
-      # Service Call: ActivateProduct
-      # @param ActivateProductRequest
-      # @return ActivateProductResponse
-      def ActivateProduct(options = {} , http_header = {})
-        request_object  = BuildActivateProduct(options)
-        request_hash    = request_object.to_hash
-        response_hash   = request("ActivateProduct", request_hash, http_header)
-        ActivateProductResponse.new(response_hash)
-      end
-      alias_method :activate_product, :ActivateProduct
-
-      def BuildActivateProduct(options = {}, &block)
-        klass     = ActivateProductRequest
-        object = options.is_a?(klass) ? options : klass.new(options || {})
-        object.instance_eval(&block) if block
-        object
-      end
-      alias_method :build_activate_product, :BuildActivateProduct
-
-      # Service Call: UpdateComplianceStatus
-      # @param UpdateComplianceStatusRequest
-      # @return UpdateComplianceStatusResponse
-      def UpdateComplianceStatus(options = {} , http_header = {})
-        request_object  = BuildUpdateComplianceStatus(options)
-        request_hash    = request_object.to_hash
-        response_hash   = request("UpdateComplianceStatus", request_hash, http_header)
-        UpdateComplianceStatusResponse.new(response_hash)
-      end
-      alias_method :update_compliance_status, :UpdateComplianceStatus
-
-      def BuildUpdateComplianceStatus(options = {}, &block)
-        klass     = UpdateComplianceStatusRequest
-        object = options.is_a?(klass) ? options : klass.new(options || {})
-        object.instance_eval(&block) if block
-        object
-      end
-      alias_method :build_update_compliance_status, :BuildUpdateComplianceStatus
-
 
     end
 
