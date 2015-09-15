@@ -56,15 +56,6 @@ module AdaptiveAccountsSamples
       @check_compliance_status_response = api.check_compliance_status(@check_compliance_status) if request.post?
     end
 
-    def add_partner_financial_product
-      @add_partner_financial_product = api.build_add_partner_financial_product(params[:AddPartnerFinancialProductRequest] || default_api_value)
-      @add_partner_financial_product_response = api.add_partner_financial_product(@add_partner_financial_product) if request.post?
-    end
-
-    def activate_product
-      @activate_product = api.build_activate_product(params[:ActivateProductRequest] || default_api_value)
-      @activate_product_response = api.activate_product(@activate_product) if request.post?
-    end
 
     private
 
