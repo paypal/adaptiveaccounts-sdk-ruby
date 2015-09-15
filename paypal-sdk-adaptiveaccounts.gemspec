@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "paypal-sdk-adaptiveaccounts"
   gem.version       = PayPal::SDK::AdaptiveAccounts::VERSION
   gem.authors       = ["PayPal"]
-  gem.email         = ["DL-PP-Platform-Ruby-SDK@ebay.com"]
+  gem.email         = ["DL-PP-Platform-Ruby-SDK@paypal.com"]
   gem.summary       = %q{PayPal Adaptive Accounts SDK}
   gem.description   = %q{The PayPal Adaptive Accounts SDK provides Ruby APIs to create and manage PayPal accounts, add payment methods to accounts and obtain account verification status using the PayPal Adaptive Accounts API.}
   gem.homepage      = "https://developer.paypal.com"
@@ -17,5 +17,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency('paypal-sdk-core', '~> 0.2.3')
+  gem.add_dependency('paypal-sdk-core', '~> 0.3.0')
 end

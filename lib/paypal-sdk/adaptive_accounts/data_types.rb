@@ -466,45 +466,6 @@ module PayPal::SDK
 
 
 
-      # This not considered when financialProductCategory=PRE_PAID_CARD 
-      class AddPartnerFinancialProductRequest < DataType
-        def self.load_members
-          object_of :requestEnvelope, RequestEnvelope, :required => true
-          object_of :accountIdentifier, AccountIdentifierType, :required => true
-          # This not considered when financialProductCategory=PRE_PAID_CARD 
-          object_of :nameOnCard, NameType
-          # This not considered when financialProductCategory=PRE_PAID_CARD 
-          object_of :billingAddress, AddressType
-          # This not considered when financialProductCategory=PRE_PAID_CARD 
-          object_of :cardOwnerDateOfBirth, Date
-          object_of :cardNumber, String, :required => true
-          # Identify the kind of PayPal financial product. Possible value is : PRE_PAID_CARD 
-          object_of :financialProductCategory, String, :required => true
-          # expirationDate is mandatory when financialProductCategoy = PRE_PAID_CARD 
-          object_of :expirationDate, CardDateType, :required => true
-          # This not considered when financialProductCategory=PRE_PAID_CARD 
-          object_of :cardVerificationNumber, String
-          # This not considered when financialProductCategory=PRE_PAID_CARD 
-          object_of :startDate, CardDateType
-          # Up to 2 digit for Switch/Maestro cards. 
-          object_of :issueNumber, String
-        end
-      end
-
-
-
-      # Valid values are: CARD_ADDED 
-      class AddPartnerFinancialProductResponse < DataType
-        def self.load_members
-          include ResponseStatus
-          object_of :responseEnvelope, ResponseEnvelope, :required => true
-          # Valid values are: CARD_ADDED 
-          object_of :execStatus, String, :required => true
-          array_of :error, ErrorData
-        end
-      end
-
-
 
       # Identifying the PayPal account to which this request is targetted to. Caller of this API has to either provided an emailAddress or an accountId. 
       class SetFundingSourceConfirmedRequest < DataType
@@ -550,53 +511,6 @@ module PayPal::SDK
           object_of :execStatus, String, :required => true
           # Returned values are: CLIENT_NOT_SUPPORTED, COUNTRY_NOT_SUPPORTED, VERIFICATION_NOT_COMPLETED, DOCUMENTS_UNDER_REVIEW, DENIED 
           object_of :denialReason, String
-          array_of :error, ErrorData
-        end
-      end
-
-
-
-      # This operation is for internal purposes developed for a POC. 
-      class ActivateProductRequest < DataType
-        def self.load_members
-          object_of :requestEnvelope, RequestEnvelope, :required => true
-          # Identifies a PayPal account to which this request is targeted. Caller of this API has to provide ONLY one of these inputs: emailAddress or accountId. 
-          object_of :accountIdentifier, AccountIdentifierType, :required => true
-        end
-      end
-
-
-
-      # Valid values are: SUCCESS, FAILED 
-      class ActivateProductResponse < DataType
-        def self.load_members
-          include ResponseStatus
-          object_of :responseEnvelope, ResponseEnvelope, :required => true
-          # Valid values are: SUCCESS, FAILED 
-          object_of :execStatus, String, :required => true
-          array_of :productActivationErrors, ProductActivationErrors
-          array_of :error, ErrorData
-        end
-      end
-
-
-
-      class UpdateComplianceStatusRequest < DataType
-        def self.load_members
-          object_of :requestEnvelope, RequestEnvelope, :required => true
-          object_of :auditeeInfo, AuditeeInfoType, :required => true
-          object_of :auditorList, AuditorList
-          object_of :auditDetails, AuditDetailsType, :required => true
-        end
-      end
-
-
-
-      class UpdateComplianceStatusResponse < DataType
-        def self.load_members
-          include ResponseStatus
-          object_of :responseEnvelope, ResponseEnvelope, :required => true
-          object_of :execStatus, String, :required => true
           array_of :error, ErrorData
         end
       end
