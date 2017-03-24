@@ -118,7 +118,6 @@ else
 end
 ```
 
-For more samples [paypal-sdk-samples.herokuapp.com/adaptive_accounts/](https://paypal-sdk-samples.herokuapp.com/adaptive_accounts/)
 
 ## Samples App
 
