@@ -117,27 +117,3 @@ else
   print @create_account_response.error[0].message
 end
 ```
-
-
-## Samples App
-
-Add following line in rails `Gemfile`:
-
-```ruby
-gem 'paypal-sdk-adaptiveaccounts'
-gem 'adaptive_accounts_samples', :git => "https://github.com/paypal/adaptiveaccounts-sdk-ruby.git", :group => :development
-```
-
-Configure routes(`config/routes.rb`):
-
-```ruby
-mount AdaptiveAccountsSamples::Engine => "/samples" if Rails.env.development?
-```
-
-To get default paypal configuration execute:
-
-```sh
-rails g paypal:sdk:install
-```
-
-Run `rails server` and check the samples.
